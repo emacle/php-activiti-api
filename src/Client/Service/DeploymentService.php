@@ -46,8 +46,11 @@ class DeploymentService extends AbstractService implements DeploymentServiceInte
                 'multipart' => [
                     [
                         'name' => 'deployment',
-                        'tenantId' => $tenantId,
                         'contents' => $deployment,
+                    ],
+                    [
+                        'name' => 'tenantId',
+                        'contents' => $tenantId
                     ],
                 ],
             ]);
