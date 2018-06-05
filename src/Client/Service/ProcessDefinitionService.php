@@ -72,6 +72,20 @@ class ProcessDefinitionService extends AbstractService implements ProcessDefinit
     /**
      * {@inheritdoc}
      */
+    public function getImage($processDefinitionId)
+    {
+        return $this->call(function (ClientInterface $client) use ($processDefinitionId) {
+            $uri = uri_template('repository/process-definitions/{processDefinitionId}/image', [
+                'processDefinitionId' => $processDefinitionId,
+            ]);
+
+            return $client->request('GET', $uri);
+        });
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function suspend($processDefinitionId, $includeProcessInstances = null, \DateTime $date = null)
     {
         return $this->callProcessDefinitionAction($processDefinitionId, 'suspend', $includeProcessInstances, $date);
