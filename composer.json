@@ -1,22 +1,27 @@
 {
-  "name": "adamwojs/php-activiti-api",
+  "name": "darkwind/php-activiti-api",
   "type": "library",
   "description": "Activiti REST API Client",
-  "keywords": [],
-  "license": "MIT",
+  "keywords": [
+    "activiti",
+    "bpmn",
+    "api",
+    "php"
+  ],
+  "license": "Apache-2.0",
   "authors": [
     {
-      "name": "Adam Wójs",
-      "email": "adam@wojs.pl"
+      "name": "darkwind",
+      "email": "shadow@dumii.cn",
+      "homepage": "https://dark-wind.github.io/"
     }
   ],
   "require": {
     "php": ">=5.6",
-    "guzzlehttp/guzzle": "6.3",
-    "symfony/var-dumper": "^3.3"
+    "guzzlehttp/guzzle": "6.3"
   },
   "require-dev": {
-    "phpunit/phpunit": "5.5.*"
+    "phpunit/phpunit": "~5.7"
   },
   "autoload": {
     "psr-4": {

@@ -17,7 +17,7 @@ class DeploymentService extends AbstractService implements DeploymentServiceInte
     {
         return $this->call(function (ClientInterface $client) use ($query) {
             return $client->request('GET', 'repository/deployments', [
-                'query' => (array)$query,
+                'query' => $this->serializer->serialize($query),
             ]);
         }, DeploymentList::class);
     }
@@ -39,14 +39,18 @@ class DeploymentService extends AbstractService implements DeploymentServiceInte
     /**
      * {@inheritdoc}
      */
-    public function createDeployment($deployment)
+    public function createDeployment($deployment, $tenantId = '')
     {
-        return $this->call(function (ClientInterface $client) use ($deployment) {
+        return $this->call(function (ClientInterface $client) use ($deployment, $tenantId) {
             return $client->request('POST', 'repository/deployments', [
                 'multipart' => [
                     [
                         'name' => 'deployment',
                         'contents' => $deployment,
+                    ],
+                    [
+                        'name' => 'tenantId',
+                        'contents' => $tenantId
                     ],
                 ],
             ]);

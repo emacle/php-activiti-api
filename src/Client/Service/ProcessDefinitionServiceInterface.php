@@ -2,6 +2,7 @@
 
 namespace Activiti\Client\Service;
 
+use Activiti\Client\Model\ProcessDefinition\ProcessDefinitionList;
 use Activiti\Client\Model\ProcessDefinition\ProcessDefinitionQuery;
 use Activiti\Client\Model\ProcessDefinition\ProcessDefinitionUpdate;
 
