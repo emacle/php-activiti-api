@@ -41,7 +41,7 @@ abstract class AbstractService
             $response = $callable($this->client);
 
             $contents = $response->getBody()->getContents();
-            if ($class !== null) {
+            if ($class !== null and $contents) {
                 return $this->hydrate($class, $this->decode($contents));
             }
 
