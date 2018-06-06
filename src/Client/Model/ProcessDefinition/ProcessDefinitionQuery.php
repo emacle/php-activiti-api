@@ -20,6 +20,23 @@ class ProcessDefinitionQuery extends AbstractQuery
     private $startableByUser;
     private $latest;
     private $suspended;
+    private $tenantId;
+
+    /**
+     * @return mixed
+     */
+    public function getTenantId()
+    {
+        return $this->tenantId;
+    }
+
+    /**
+     * @param mixed $tenantId
+     */
+    public function setTenantId($tenantId)
+    {
+        $this->tenantId = $tenantId;
+    }
 
     public function getVersion()
     {
