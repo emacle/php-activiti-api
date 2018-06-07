@@ -2,7 +2,9 @@
 
 namespace Activiti\Client\Model\Group;
 
-class Group
+use Activiti\Client\Model\AbstractModel;
+
+class Group extends AbstractModel
 {
     /**
      * @var array

@@ -2,7 +2,9 @@
 
 namespace Activiti\Client\Model\Task;
 
-class Task
+use Activiti\Client\Model\AbstractModel;
+
+class Task extends AbstractModel
 {
     /**
      * @var array

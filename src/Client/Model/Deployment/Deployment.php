@@ -2,7 +2,9 @@
 
 namespace Activiti\Client\Model\Deployment;
 
-class Deployment
+use Activiti\Client\Model\AbstractModel;
+
+class Deployment extends AbstractModel
 {
     /**
      * @var array

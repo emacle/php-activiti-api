@@ -2,7 +2,9 @@
 
 namespace Activiti\Client\Model\ProcessDefinition;
 
-class ProcessDefinition
+use Activiti\Client\Model\AbstractModel;
+
+class ProcessDefinition extends AbstractModel
 {
     /**
      * @var array

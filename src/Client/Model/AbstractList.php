@@ -46,4 +46,26 @@ abstract class AbstractList implements \IteratorAggregate
     {
         return $this->data['order'];
     }
+
+    /**
+     * Get an array with the values of a given column.
+     *
+     * @param $column
+     * @param null $key
+     * @return array
+     */
+    public function pluck($column, $key = null)
+    {
+        $results = [];
+
+        foreach ($this->data['data'] as $item) {
+            if (is_null($key)) {
+                $results[] = $item->$column;
+            } else {
+                $results[$item->$key] = $item->$column;
+            }
+        }
+
+        return $results;
+    }
 }
