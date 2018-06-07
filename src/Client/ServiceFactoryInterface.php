@@ -9,6 +9,7 @@ use Activiti\Client\Service\ProcessDefinitionServiceInterface;
 use Activiti\Client\Service\ProcessInstanceServiceInterface;
 use Activiti\Client\Service\TaskServiceInterface;
 use Activiti\Client\Service\UserServiceInterface;
+use Activiti\Client\Service\HistoryServiceInterface;
 
 interface ServiceFactoryInterface
 {
