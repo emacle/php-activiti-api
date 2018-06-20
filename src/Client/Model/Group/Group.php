@@ -6,11 +6,6 @@ use Activiti\Client\Model\AbstractModel;
 
 class Group extends AbstractModel
 {
-    /**
-     * @var array
-     */
-    private $data;
-
     public function __construct(array $data)
     {
         $this->data = $data;

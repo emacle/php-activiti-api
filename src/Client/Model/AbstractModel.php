@@ -11,6 +11,11 @@ namespace Activiti\Client\Model;
 
 class AbstractModel
 {
+    /**
+     * @var array
+     */
+    protected $data;
+
     public function __get($name)
     {
         if (isset($this->data[$name])) {
