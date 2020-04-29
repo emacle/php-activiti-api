@@ -1,5 +1,5 @@
 {
-  "name": "darkwind/php-activiti-api",
+  "name": "emacle/php-activiti-api",
   "type": "library",
   "description": "Activiti REST API Client",
   "keywords": [
@@ -11,9 +11,9 @@
   "license": "Apache-2.0",
   "authors": [
     {
-      "name": "darkwind",
-      "email": "shadow@dumii.cn",
-      "homepage": "https://dark-wind.github.io/"
+      "name": "emacle",
+      "email": "79464972@qq.com",
+      "homepage": "https://emacle.github.io/"
     }
   ],
   "require": {
