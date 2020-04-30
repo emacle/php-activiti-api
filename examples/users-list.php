@@ -19,7 +19,7 @@ $serviceFactory = new ServiceFactory($client, new ModelFactory(), new ObjectSeri
 $service = $serviceFactory->createUserService();
 
 $query = new UserQuery();
-$query->setSize(10);
+$query->setSize(10); // setSize, setStart 设置分页参数
 
 do {
     $users = $service->getUsersList($query);

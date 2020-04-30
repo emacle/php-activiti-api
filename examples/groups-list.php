@@ -28,4 +28,4 @@ do {
     }
 
     $query->setStart($query->getStart() + 10);
-} while ($groups->total > $query->getStart());
+} while ($groups->getTotal() > $query->getStart());
