@@ -210,7 +210,7 @@ class ModelFactory implements ModelFactoryInterface
      */
     public function createProcessInstance(array $data)
     {
-        foreach($data['variables'] as $i => $variableData) {
+        foreach ($data['variables'] as $i => $variableData) {
             $data['variables'][$i] = $this->createVariable($variableData);
         }
 
@@ -242,8 +242,11 @@ class ModelFactory implements ModelFactoryInterface
      */
     public function createTask(array $data)
     {
-        foreach($data['variables'] as $i => $variableData) {
-            $data['variables'][$i] = $this->createVariable($variableData);
+        // solved task complete, guzzle json_decode error: Syntax error Undefined index: variables
+        if (array_key_exists('variables', $data)) {
+            foreach ($data['variables'] as $i => $variableData) {
+                $data['variables'][$i] = $this->createVariable($variableData);
+            }
         }
 
         return new Task($data);

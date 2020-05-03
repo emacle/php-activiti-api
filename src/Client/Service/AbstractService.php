@@ -41,6 +41,12 @@ abstract class AbstractService
             $response = $callable($this->client);
 
             $contents = $response->getBody()->getContents();
+            
+            // solved task complete, guzzle json_decode error: Syntax error , Undefined index: variables
+            if ($contents == "") {
+                $contents = '{}';
+            }
+
             if ($class !== null) {
                 return $this->hydrate($class, $this->decode($contents));
             }
