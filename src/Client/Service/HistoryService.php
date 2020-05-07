@@ -3,6 +3,7 @@
 namespace Activiti\Client\Service;
 
 use Activiti\Client\Model\History\HistoryActivityInstance;
+use Activiti\Client\Model\History\HistoryActivityInstanceList;
 use Activiti\Client\Model\History\HistoryQuery;
 use Activiti\Client\Model\ProcessInstance\ProcessInstanceList;
 use GuzzleHttp\ClientInterface;
@@ -18,7 +19,7 @@ class HistoryService extends AbstractService implements HistoryServiceInterface
             return $client->request('POST', 'query/historic-activity-instances', [
                 'json' => array_filter($this->serializer->serialize($historyQuery)),
             ]);
-        }, HistoryActivityInstance::class);
+        }, HistoryActivityInstanceList::class);
     }
 
     /**

@@ -16,6 +16,8 @@ use Activiti\Client\Model\ProcessDefinition\ProcessDefinition;
 use Activiti\Client\Model\ProcessDefinition\ProcessDefinitionList;
 use Activiti\Client\Model\ProcessInstance\ProcessInstance;
 use Activiti\Client\Model\ProcessInstance\ProcessInstanceList;
+use Activiti\Client\Model\History\HistoryActivityInstance;
+use Activiti\Client\Model\History\HistoryActivityInstanceList;
 use Activiti\Client\Model\Task\Attachment;
 use Activiti\Client\Model\Task\AttachmentList;
 use Activiti\Client\Model\Task\Comment;
@@ -227,6 +229,30 @@ class ModelFactory implements ModelFactoryInterface
         }
 
         return new ProcessInstanceList($data);
+    }
+
+    // $serviceFactory->createHistoryService()->queryHistoryInstances($query)
+    // Type: Error   Message: Call to undefined method Activiti\Client\ModelFactory::createHistoryActivityInstance()
+    /**
+     * @inheritdoc
+     */
+    public function createHistoryActivityInstance(array $data)
+    {
+        return new HistoryActivityInstance($data);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function createHistoryActivityInstanceList(array $data)
+    {
+        // var_dump($data);
+
+        foreach ($data['data'] as $i => $HistoryActivityInstanceData) {
+            $data['data'][$i] = $this->createHistoryActivityInstance($HistoryActivityInstanceData);
+        }
+
+        return new HistoryActivityInstanceList($data);
     }
 
     /**
