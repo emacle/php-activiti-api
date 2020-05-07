@@ -52,8 +52,8 @@ abstract class AbstractService
             }
 
             return $contents;
-        } catch (RequestException $ex) {
-            throw new ActivitiException($ex->getMessage(), 0, $ex);
+        } catch (RequestException $ex) {          
+            throw new ActivitiException($ex->getMessage(), $ex->getCode(), $ex);
         }
     }
 
